@@ -463,6 +463,8 @@
     section:nth-child(3) { animation-delay: 0.15s; }
     section:nth-child(4) { animation-delay: 0.2s; }
     section:nth-child(5) { animation-delay: 0.25s; }
+    section:nth-child(6) { animation-delay: 0.3s; }
+    section:nth-child(n+7) { animation-delay: 0.35s; }
   </style>
 </head>
 <body>
@@ -491,9 +493,10 @@
     <a class="sidebar-link" href="#retention"><span class="link-num">07</span>Retention &amp; Deletion</a>
     <a class="sidebar-link" href="#security"><span class="link-num">08</span>Security</a>
     <a class="sidebar-link" href="#rights"><span class="link-num">09</span>Your Rights</a>
-    <a class="sidebar-link" href="#children"><span class="link-num">10</span>Children's Privacy</a>
-    <a class="sidebar-link" href="#changes"><span class="link-num">11</span>Changes</a>
-    <a class="sidebar-link" href="#contact"><span class="link-num">12</span>Contact</a>
+    <a class="sidebar-link" href="#transfers"><span class="link-num">10</span>International Transfers</a>
+    <a class="sidebar-link" href="#children"><span class="link-num">11</span>Children's Privacy</a>
+    <a class="sidebar-link" href="#changes"><span class="link-num">12</span>Changes</a>
+    <a class="sidebar-link" href="#contact"><span class="link-num">13</span>Contact</a>
   </div>
 </nav>
 
@@ -505,9 +508,19 @@
       <span class="section-num">01</span>
       <span class="section-title">Introduction</span>
     </div>
-    <p>H2T Admin ("we", "our", or "us") is the back-office application for Here2There, used by ground transport and chauffeur operators to manage bookings, dispatch drivers, set pricing and issue invoices. This Privacy Policy explains how the app handles information on iOS and Android.</p>
-    <p>H2T Admin is a <strong>staff application, not a passenger app</strong>. You need an account issued by your company administrator to sign in — accounts cannot be created inside the app. Because the app exists to run a business, it necessarily handles real personal data: yours as a staff user, and that of your company's customers, drivers and suppliers.</p>
+    <p>H2T Admin ("we", "our", or "us") is the back-office application for Here2There, used by ground transport and chauffeur operators to manage bookings, dispatch drivers, set pricing, handle suppliers and corporate accounts, and issue invoices. This Privacy Policy explains how the app handles information on iOS and Android.</p>
+    <p>H2T Admin is a <strong>staff application, not a passenger app</strong>. You need an account issued by your company administrator to sign in — accounts cannot be created inside the app, and there is no sign-up or self-service onboarding. Because the app exists to run a business, it necessarily handles real personal data: yours as a staff user, and that of your company's customers, drivers, suppliers and corporate clients.</p>
     <p>By using H2T Admin, you agree to the practices described in this policy. If you disagree with any part of it, please discontinue use of the application.</p>
+
+    <div class="notice-box" style="margin-top:18px;">
+      <p><strong>At a glance</strong></p>
+      <ul>
+        <li><strong>We do not track you.</strong> The app contains no advertising, attribution or analytics SDK, never reads the advertising identifier (IDFA / GAID), and shares nothing with data brokers or with third parties for advertising. Because no tracking takes place, the app does not present Apple's App Tracking Transparency prompt — there is nothing to ask permission for.</li>
+        <li><strong>We do not collect your location.</strong> The app has no location permission and links no location framework, so it cannot read your device's position. Map coordinates in the app are the pickup and drop-off points of a booking, not your whereabouts.</li>
+        <li><strong>We do not sell your data</strong>, show you advertising, or profile you.</li>
+        <li><strong>What we do handle</strong> is the operational data you and your colleagues enter to run transport jobs — described in full in Section 02.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- 2. Information We Collect -->
@@ -521,69 +534,90 @@
       <div class="info-card">
         <span class="info-card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></span>
         <h3>Account &amp; Sign-in</h3>
-        <p>Your credentials are sent to the Here2There server to verify your identity. On success:</p>
+        <p>The email address and password you enter are sent to the Here2There server to verify your identity. On success:</p>
         <ul>
           <li>An authentication token is returned</li>
           <li>It is stored in the <strong>iOS Keychain</strong> or <strong>Android Keystore</strong></li>
           <li>It authorises your later requests</li>
           <li>It is <strong>deleted when you sign out</strong></li>
         </ul>
+        <p style="margin-top:8px;">A copy of your own profile — name, email, role and company — is cached in the same secure storage so the app can show your identity without re-fetching it on every launch.</p>
       </div>
 
       <div class="info-card">
         <span class="info-card-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
         <h3>Business &amp; Operational Data</h3>
-        <p>Records you create are stored on the Here2There server:</p>
+        <p>Records you create are stored on Here2There's servers:</p>
         <ul>
-          <li>Customers — names, phones, emails, addresses</li>
-          <li>Drivers, suppliers and vehicles</li>
-          <li>Bookings, quotes and booking messages</li>
-          <li>Pricing, promo codes, invoices, payments</li>
-          <li>Incident notes</li>
+          <li>Customers — names, phones, emails, addresses, photos</li>
+          <li>Drivers, driver groups, suppliers and vehicles</li>
+          <li>Corporate companies, their administrators and employees</li>
+          <li>Bookings, quotes, dispatch decisions and booking messages</li>
+          <li>Pricing, zones, promo codes, invoices, payments, refunds</li>
+          <li>Incident notes, earnings summaries and reports</li>
         </ul>
         <p style="margin-top:8px;">Used <strong>only</strong> to provide the service to your company — never for advertising or profiling.</p>
       </div>
 
-      <div class="info-card">
-        <span class="info-card-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 8h5M8 12h8M8 16h6"/></svg></span>
-        <h3>Contacts (Optional)</h3>
-        <p>So you can add a customer without retyping their details, the app can read your device address book.</p>
-        <ul>
-          <li>Entirely <strong>optional</strong> — you may decline</li>
-          <li>Read <strong>only</strong> at the moment you import one</li>
-          <li><strong>Never</strong> uploaded, indexed or synced in bulk</li>
-          <li>Revocable anytime in device Settings</li>
-        </ul>
+      <div class="info-card card-full">
+        <span class="info-card-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <h3>Booking Addresses &amp; Maps</h3>
+        <p>Booking screens display maps and address information using the <strong>Google Maps Platform</strong>. Map and place requests, together with your IP address, reach Google in order to render a map or resolve an address.</p>
+        <p style="margin-top:8px;"><strong>Booking coordinates are job locations, not your location.</strong> When you type or search for a pickup or drop-off address, it is resolved to a latitude and longitude so the route can be drawn and priced by distance or zone. Those coordinates describe the journey being arranged for a customer — they are never the position of your device. <strong>No device location is sent</strong>, because the app has no location access to send. See Section 03.</p>
       </div>
 
       <div class="info-card">
         <span class="info-card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
         <h3>Photos You Attach</h3>
-        <p>Where the app lets you attach an image, it opens your operating system's own photo picker.</p>
+        <p>Customer, driver, supplier and vehicle forms let you attach an image. Tapping to add one opens your operating system's own photo picker.</p>
         <ul>
           <li>Only the image <strong>you pick</strong> is read</li>
-          <li>It is compressed and attached to that record</li>
-          <li>The app has <strong>no standing access</strong> to your photo library</li>
+          <li>It is compressed on the device and attached to that record</li>
+          <li>The app has <strong>no standing access</strong> to your photo library and never scans or bulk-reads it</li>
+          <li>On Android the app explicitly <strong>removes</strong> the broad media-library permissions that some third-party packages would otherwise add</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <span class="info-card-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 8h5M8 12h8M8 16h6"/></svg></span>
+        <h3>Invoice PDFs on Your Device</h3>
+        <p>When you download or print an invoice, the app generates a PDF and saves it into the app's own documents folder, then opens it with your device's file viewer.</p>
+        <ul>
+          <li>You may print or share it through your operating system's standard dialog</li>
+          <li>The file stays on your device until you delete it</li>
+          <li>It is removed with the app on uninstall</li>
         </ul>
       </div>
 
       <div class="info-card">
         <span class="info-card-icon"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></span>
         <h3>Push Notifications</h3>
-        <p>Where enabled for your deployment, your operating system issues an anonymous device token so operational alerts can reach you.</p>
-        <p style="margin-top:8px;">The token does <strong>not</strong> identify you personally and cannot be used to read anything on your device.</p>
+        <p>Where enabled for your deployment, your operating system issues an anonymous <strong>device push token</strong> so operational alerts — new bookings, quote responses, invoice events — can reach you.</p>
+        <ul>
+          <li>The token does <strong>not</strong> identify you personally and cannot be used to read anything on your device</li>
+          <li>Payloads carry only the alert text and a record reference, so tapping opens the right screen</li>
+          <li>On Android 13 and later you may decline, and can revoke it in Settings at any time</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <span class="info-card-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+        <h3>Links Opened Outside the App</h3>
+        <p>The app can open external destinations in your browser or dialler — the Here2There website, the terms and privacy pages, and a phone number on a corporate company record.</p>
+        <p style="margin-top:8px;">Once a link opens, you are on that external site or app, and its own privacy policy applies.</p>
       </div>
 
       <div class="info-card">
         <span class="info-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/><path d="M6 9h6M6 13h4"/></svg></span>
         <h3>Technical Data</h3>
-        <p>As with any networked app, requests to our server include standard technical details:</p>
+        <p>As with any networked app, requests to our servers include standard technical details:</p>
         <ul>
           <li>IP address</li>
-          <li>App version</li>
-          <li>Device platform</li>
+          <li>App version and build</li>
+          <li>Device platform and OS version</li>
+          <li>Network connectivity state — used only to show an offline indicator and retry requests</li>
         </ul>
-        <p style="margin-top:8px;">These may appear in server logs for security and troubleshooting.</p>
+        <p style="margin-top:8px;">These may appear in server logs for security, abuse prevention and troubleshooting.</p>
       </div>
 
     </div>
@@ -596,14 +630,45 @@
       <span class="section-title">Data We Don't Collect</span>
     </div>
     <div class="notice-box">
-      <p>H2T Admin contains <strong>no advertising SDK, no analytics SDK and no behavioural tracking</strong> of any kind. Specifically:</p>
-      <ul>
-        <li><strong>No device location tracking.</strong> The app displays maps but does <strong>not</strong> request location permission and does not track your phone's position. Addresses come from what you type or select — never from your GPS.</li>
-        <li><strong>No card or bank details.</strong> The app records that a payment happened and for how much. We <strong>never</strong> receive, process or store card numbers, CVVs or bank credentials.</li>
-        <li><strong>No advertising identifiers</strong> (IDFA / GAID) and no ad networks.</li>
-        <li><strong>No microphone access, no photo library scanning</strong>, and no reading of your other apps' data.</li>
-        <li><strong>No selling of data</strong> to anyone, under any circumstances.</li>
-      </ul>
+      <p>H2T Admin contains <strong>no advertising SDK, no analytics SDK and no behavioural tracking</strong> of any kind. The three statements below are the ones most often asked about, so they are set out in full.</p>
+    </div>
+    <div class="card-grid" style="margin-top:14px;">
+
+      <div class="info-card card-full">
+        <h3>3.1 &nbsp;We do not track you, and we do not use App Tracking Transparency</h3>
+        <p>Apple and other regulators define <strong>tracking</strong> as linking data about you with third-party data for advertising purposes, or sharing your data with a data broker. <strong>H2T Admin does neither.</strong></p>
+        <ul>
+          <li>No advertising, attribution or measurement SDK is included — no AdMob, AppsFlyer, Branch, Adjust, Facebook SDK, Segment or Mixpanel.</li>
+          <li>No analytics or crash-reporting SDK is included. Google Firebase is present <strong>only</strong> for Cloud Messaging, which delivers push notifications; Firebase Analytics is not part of the app.</li>
+          <li>The advertising identifier — <strong>IDFA</strong> on iOS and <strong>GAID</strong> on Android — is never requested or read.</li>
+          <li>Nothing is shared with data brokers, ad networks or any third party for advertising or profiling.</li>
+          <li>There is no cross-app or cross-website tracking of any kind.</li>
+        </ul>
+        <p style="margin-top:10px;">Because none of our processing meets the definition of tracking, the app <strong>does not present the App Tracking Transparency permission prompt</strong>, and it declares no tracking usage description. That absence is deliberate: there is no tracking to request your permission for. Our App Store privacy label reflects this — no data type is declared as "used to track you".</p>
+      </div>
+
+      <div class="info-card card-full">
+        <h3>3.2 &nbsp;We do not collect your location — precise or approximate</h3>
+        <p>The app displays maps, but it <strong>never reads the position of your device</strong>:</p>
+        <ul>
+          <li>The app requests <strong>no location permission</strong>, on either platform. It declares no location usage-description key and links no location framework, so the operating system will not supply it with a position even if it asked. This is a technical impossibility, not merely a policy choice.</li>
+          <li>It contains no location or geolocation library and calls no location API.</li>
+          <li><strong>Why the app still shows coordinates.</strong> Every booking has a pickup point and a drop-off point. When an administrator types or searches for those addresses, each is resolved to a latitude and longitude so the route can be drawn on a map and priced by distance or zone. Those coordinates describe <strong>the journey being arranged for a customer</strong> — they are not, and cannot be, the location of the device or the person holding it.</li>
+          <li>Background location, geofencing, location history and live vehicle tracking are <strong>not</strong> features of this app.</li>
+        </ul>
+      </div>
+
+      <div class="info-card card-full">
+        <h3>3.3 &nbsp;Also not collected</h3>
+        <ul>
+          <li><strong>No card or bank details.</strong> The app records that a payment happened and for how much. We <strong>never</strong> receive, process or store card numbers, CVVs or bank credentials.</li>
+          <li><strong>No in-app purchases, subscriptions or paywalls.</strong> All functionality is free to authorised users.</li>
+          <li><strong>No microphone, camera-roll scanning, calendar, health or contacts access.</strong> The app reads only the single photo you explicitly pick from your own photo picker.</li>
+          <li><strong>No reading of your other apps' data.</strong></li>
+          <li><strong>No selling of data</strong> to anyone, under any circumstances.</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
@@ -615,7 +680,7 @@
     </div>
     <p>This distinction matters, because most of the personal data in the app is not your own:</p>
     <ul>
-      <li>Your <strong>employer</strong> — the transport operator whose account you sign in with — is the <strong>data controller</strong> for the customer, driver and supplier records in the system. They decide what is collected, why, and how long it is kept.</li>
+      <li>Your <strong>employer</strong> — the transport operator whose account you sign in with — is the <strong>data controller</strong> for the customer, driver, supplier and corporate records in the system. They decide what is collected, why, and how long it is kept.</li>
       <li><strong>Here2There</strong> provides the software and hosting, acting as a <strong>data processor</strong> on your employer's instructions.</li>
     </ul>
     <p>If you are a passenger, driver or customer of a transport company and want to know what they hold about you — or want it corrected or erased — please contact that company directly. They control your data, and we can only act on their instruction.</p>
@@ -632,14 +697,21 @@
 
       <div class="tp-card">
         <span class="tp-card-name">Here2There Server</span>
-        <div class="tp-card-meta"><strong>Purpose</strong>Stores operational records; authenticates staff sign-in</div>
+        <div class="tp-card-meta"><strong>Purpose</strong>Authenticates staff sign-in; stores bookings, customers, drivers, suppliers, pricing, invoices, payments, incidents, reports and earnings</div>
         <div class="tp-card-meta"><strong>Data Collected</strong>Everything in Section 02</div>
         <a class="tp-link" href="#intro">This policy applies</a>
       </div>
 
       <div class="tp-card">
+        <span class="tp-card-name">Here2There Corporate Service</span>
+        <div class="tp-card-meta"><strong>Purpose</strong>Serves the corporate accounts module — company records, company administrators and employees, company bookings, invoices and balances</div>
+        <div class="tp-card-meta"><strong>Data Collected</strong>Corporate company and employee records. Operated by Here2There.</div>
+        <a class="tp-link" href="#intro">This policy applies</a>
+      </div>
+
+      <div class="tp-card">
         <span class="tp-card-name">Google Maps Platform</span>
-        <div class="tp-card-meta"><strong>Purpose</strong>Renders maps and place information</div>
+        <div class="tp-card-meta"><strong>Purpose</strong>Renders maps and resolves place / address information</div>
         <div class="tp-card-meta"><strong>Data Collected</strong>Map/place requests, IP. No device location is sent.</div>
         <a class="tp-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy ↗</a>
       </div>
@@ -647,7 +719,7 @@
       <div class="tp-card">
         <span class="tp-card-name">Firebase Cloud Messaging</span>
         <div class="tp-card-meta"><strong>Purpose</strong>Delivers operational push notifications</div>
-        <div class="tp-card-meta"><strong>Data Collected</strong>Anonymous device push token</div>
+        <div class="tp-card-meta"><strong>Data Collected</strong>Anonymous device push token, notification payload</div>
         <a class="tp-link" href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Privacy Policy ↗</a>
       </div>
 
@@ -663,6 +735,8 @@
     <p>We do not sell, rent or trade personal data, and we do not share it for anyone else's advertising. We share data only in these circumstances:</p>
     <ul>
       <li><strong>Within your company</strong> — records you create are visible to other authorised staff on your company's account. That is the purpose of a shared dispatch system.</li>
+      <li><strong>With assigned suppliers and drivers</strong> — where you assign a booking, the details that party needs to perform the job are shared with them.</li>
+      <li><strong>With a booking's customer</strong> — where you send a quote, an invoice, or generate a tracking link, that information is delivered to the customer you addressed it to.</li>
       <li><strong>With the service providers in Section 05</strong>, strictly to make the app function.</li>
       <li><strong>Where the law requires it</strong> — a valid legal request or court order, or to protect against fraud, abuse or a threat to someone's safety.</li>
       <li><strong>On a change of ownership</strong> — if the business is transferred, data may transfer with it, subject to this policy.</li>
@@ -679,15 +753,19 @@
     <div class="del-list">
       <div class="del-item">
         <div class="del-item-dot"></div>
-        <div class="del-item-text"><strong>Signing out</strong> — deletes the stored authentication token from your device</div>
+        <div class="del-item-text"><strong>Signing out</strong> — deletes the stored authentication token from your device's secure storage</div>
       </div>
       <div class="del-item">
         <div class="del-item-dot"></div>
-        <div class="del-item-text"><strong>Uninstalling the app</strong> — removes all app data from the device</div>
+        <div class="del-item-text"><strong>Session expiry or forced sign-out</strong> — clears all values the app holds in secure storage: token, cached profile and push token</div>
       </div>
       <div class="del-item">
         <div class="del-item-dot"></div>
-        <div class="del-item-text"><strong>Server-side deletion</strong> — contact your company administrator, or write to us using the details in Section 12</div>
+        <div class="del-item-text"><strong>Uninstalling the app</strong> — removes all app data from the device, including invoice PDFs saved in the app's folder and cached images</div>
+      </div>
+      <div class="del-item">
+        <div class="del-item-dot"></div>
+        <div class="del-item-text"><strong>Server-side deletion</strong> — contact your company administrator, or write to us using the details in Section 13</div>
       </div>
     </div>
     <p style="margin-top:14px;">Note that signing out or uninstalling does <strong>not</strong> delete records from the server — those belong to your company, not to your handset.</p>
@@ -700,10 +778,10 @@
       <span class="section-title">Security</span>
     </div>
     <ul>
-      <li>Your authentication token is held in the platform's hardware-backed secure storage — the <strong>iOS Keychain</strong> or <strong>Android Keystore</strong> — not in plain application storage.</li>
-      <li>All traffic to the Here2There server is sent over <strong>HTTPS</strong>.</li>
+      <li>Your authentication token and cached profile are held in the platform's hardware-backed secure storage — the <strong>iOS Keychain</strong> or <strong>Android Keystore</strong> — not in plain application storage.</li>
+      <li>All traffic to Here2There servers is sent over <strong>HTTPS</strong>.</li>
       <li>Access requires an account issued by your company; there is <strong>no public sign-up</strong>.</li>
-      <li>Access to operational records is scoped to your company's account.</li>
+      <li>Access to operational records is scoped to your company's account and your assigned role.</li>
     </ul>
     <p style="margin-top:12px;">No system is perfectly secure, and we cannot guarantee absolute security. Please protect your account by using a strong password, not sharing your login, and keeping your device locked and up to date.</p>
   </section>
@@ -714,43 +792,52 @@
       <span class="section-num">09</span>
       <span class="section-title">Your Rights</span>
     </div>
-    <p>Depending on where you live, you may have the right to access a copy of your personal data, correct it, have it erased, restrict or object to how it is used, or receive it in a portable form.</p>
-    <p>If you are a <strong>staff user</strong>, contact us or your company administrator. If you are a <strong>customer or driver</strong> of a transport company using H2T Admin, contact that company — as explained in Section 04, they control your data and we act on their instructions. We respond to verified requests within the period required by applicable law.</p>
+    <p>Depending on where you live, you may have the right to access a copy of your personal data, correct it, have it erased, restrict or object to how it is used, withdraw consent, or receive it in a portable form.</p>
+    <p>If you are a <strong>staff user</strong>, contact us or your company administrator. If you are a <strong>customer, passenger or driver</strong> of a transport company using H2T Admin, contact that company — as explained in Section 04, they control your data and we act on their instructions. We respond to verified requests within the period required by applicable law. You may also have the right to lodge a complaint with your local data protection authority.</p>
   </section>
 
-  <!-- 10. Children's Privacy -->
-  <section id="children">
+  <!-- 10. International Transfers -->
+  <section id="transfers">
     <div class="section-header">
       <span class="section-num">10</span>
+      <span class="section-title">International Data Transfers</span>
+    </div>
+    <p>Here2There's servers and the third-party services in Section 05 may process data in countries other than your own. Where data is transferred internationally, we rely on the safeguards required by applicable law, and the data remains subject to this policy and to your employer's instructions as data controller.</p>
+  </section>
+
+  <!-- 11. Children's Privacy -->
+  <section id="children">
+    <div class="section-header">
+      <span class="section-num">11</span>
       <span class="section-title">Children's Privacy</span>
     </div>
     <p>H2T Admin is a professional business tool intended for adult staff of transport operators. It is not directed at children, and we do not knowingly collect personal data from anyone under 16. If you believe a child's data has reached us, contact us and we will remove it.</p>
   </section>
 
-  <!-- 11. Changes -->
+  <!-- 12. Changes -->
   <section id="changes">
     <div class="section-header">
-      <span class="section-num">11</span>
+      <span class="section-num">12</span>
       <span class="section-title">Changes to This Policy</span>
     </div>
     <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Last Updated" date at the bottom of this page. For significant changes, we may notify you via an in-app notice or through your company administrator. Continued use of H2T Admin after any changes constitutes acceptance of the updated policy.</p>
   </section>
 
-  <!-- 12. Contact -->
+  <!-- 13. Contact -->
   <section id="contact">
     <div class="section-header">
-      <span class="section-num">12</span>
+      <span class="section-num">13</span>
       <span class="section-title">Contact Us</span>
     </div>
     <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us:</p>
     <div class="contact-card">
       <div class="contact-row">
-        <span class="contact-label">Developer</span>
-        <span class="contact-value">Sahil Partyal</span>
-      </div>
-      <div class="contact-row">
         <span class="contact-label">App</span>
         <span class="contact-value">H2T Admin</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Developer</span>
+        <span class="contact-value">Sahil Partyal</span>
       </div>
       <div class="contact-row">
         <span class="contact-label">Email</span>
@@ -760,11 +847,15 @@
         <span class="contact-label">Phone</span>
         <span class="contact-value"><a href="tel:+918264954344">+91 82649 54344</a></span>
       </div>
+      <div class="contact-row">
+        <span class="contact-label">Website</span>
+        <span class="contact-value"><a href="https://here2there.io" target="_blank" rel="noopener">here2there.io</a></span>
+      </div>
     </div>
   </section>
 
   <div class="meta-bar">
-    <span style="display:flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><strong>Last Updated:</strong> July 27, 2026</span>
+    <span style="display:flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><strong>Last Updated:</strong> September 4, 2026</span>
     <span>Applies to H2T Admin on iOS &amp; Android</span>
   </div>
 
